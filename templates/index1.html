@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Suicide Attempts Prediction</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="static/layout1/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1e3c72, #2a5298, #f5576c, #ffcc70);
+            background-size: 400% 400%;
+            animation: gradientBG 12s ease infinite;
+            color: #333;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Particle Effect */
+        #particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        /* Header */
+        .bgded.overlay {
+            background: linear-gradient(120deg, #ff6a88, #ff8e53);
+            padding: 40px 0;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .bgded.overlay h1 {
+            color: #fff;
+            font-size: 42px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            margin: 0;
+        }
+
+        /* Form Container */
+        .wrapper.row2 {
+            padding: 50px 0;
+        }
+
+        .hoc.container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
+            padding: 40px;
+            transition: all 0.3s ease;
+        }
+
+        .hoc.container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+        }
+
+        /* Form Styling */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            align-items: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .form-group label {
+            width: 200px; /* Fixed width for all labels */
+            font-size: 22px;
+            font-weight: 600;
+            color: #2a5298;
+            text-align: right; /* Right-align text within label */
+            padding-right: 20px; /* Space between label and input */
+        }
+
+        .form-group select,
+        .form-group input {
+            width: 400px; /* Fixed width for all inputs/selects */
+            padding: 12px 15px;
+            font-size: 16px;
+            border-radius: 10px;
+            border: 2px solid #ddd;
+            background: #f9f9f9;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group select:focus,
+        .form-group input:focus {
+            border-color: #ff6a88;
+            background: #fff;
+            box-shadow: 0 6px 15px rgba(255, 106, 136, 0.3);
+            outline: none;
+            transform: scale(1.02);
+        }
+
+        .form-group input[type="number"] {
+            appearance: textfield;
+        }
+
+        /* Submit Button */
+        .btn-submit {
+            background: linear-gradient(120deg, #ff6a88, #ff8e53);
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            width: 200px;
+            margin: 20px auto 0;
+            box-shadow: 0 5px 15px rgba(255, 106, 136, 0.4);
+        }
+
+        .btn-submit:hover {
+            background: linear-gradient(120deg, #ff8e53, #ff6a88);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 106, 136, 0.6);
+        }
+
+        /* Message Styling */
+        .msg {
+            text-align: center;
+            font-size: 24px;
+            color: #2a5298;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body id="top">
+    <!-- Particle Background -->
+    <div id="particles"></div>
+
+    <!-- Top Background Image Wrapper -->
+    <div class="bgded overlay">
+        <h1>Prediction Form</h1>
+    </div>
+
+    <!-- Form Section -->
+    <div class="wrapper row2">
+        <article class="hoc container clear">
+            <form action="predict" method="post">
+                <div class="msg">{{ msg }}</div>
+
+                <div class="form-group">
+                    <label><b>Gender</b></label>
+                    <select name="Gender" required>
+                        <option value="-1">Select any one option</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <!-- <option value="TransGender male">Transgender</option> -->
+                        <!-- <option value="TransGender Female">Transgender Female</option> -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label><b>Sexuality</b></label>
+                    <select name="sexuallity" required>
+                        <option value="-1">Select any one option</option>
+                        <option value="Straight">Straight</option>
+                        <option value="Bisexual">Bisexual</option>
+                        <option value="Gay/Lesbian">Gay/Lesbian</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label><b>Age</b></label>
+                    <input type="number" name="age" required placeholder="Enter your age">
+                </div>
+
+                <div class="form-group">
+                    <label><b>Income $</b></label>
+                    <select name="income" required>
+                        <option value="-1">Select any one option</option>
+                        <option value="0">RS.$0</option>
+                        <option value="1">RS $1 to $10,000</option>
+                        <option value="2">RS $10,000 to $19,999</option>
+                        <option value="3">RS $20,000 to $29,999</option>
+                        <option value="4">RS $30,000 to $39,999</option>
+                        <option value="5">RS $50,000 to $74,999</option>
+                        <option value="6">RS $40,000 to $49,999</option>
+                        <option value="7">RS $75,000 to $99,999</option>
+                        <option value="8">RS $125,000 to $149,999</option>
+                        <option value="9">RS $100,000 to $124,999</option>
+                        <option value="10">RS $150,000 to $174,999</option>
+                        <option value="11">RS $200,000 or more</option>
+                        <option value="12">RS $174,999 to $199,999</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label><b>Race</b></label>
+                    <select name="race" required>
+                        <option value="-1">Select any one option</option>
+                        <option value="0">White non-Hispanic</option>
+                        <option value="1">Asian</option>
+                        <option value="2">Hispanic (of any race)</option>
+                        <option value="3">Black</option>
+                        <option value="4">Mixed</option>
+                        <option value="5">Middle Eastern</option>
+                        <option value="6">Indian</option>
+                        <option value="7">Caucasian</option>
+                        <option value="8">Pakistani</option>
+                        <option value="9">Mixed</option>
+                        <option value="10">Turkish</option>
+                        <option value="11">Half Asian half white</option>
+                        <option value="12">White and Asian</option>
+                        <option value="13">North African</option>
+                        <option value="14">Native American mix</option>
+                        <option value="15">European</option>
+                        <option value="16">First two answers (Androgyne/Asexual)</option>
+                        <option value="17">White and Native American</option>
+                        <option value="18">Multi</option>
+                        <option value="19">Mixed white/Asian</option>
+                        <option value="20">Native American</option>
+                        <option value="21">Helicopterkin</option>
+                        <option value="22">Half Arab</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label><b>Body Weight</b></label>
+                    <select name="weight" required>
+                        <option value="-1">Select any one option</option>
+                        <option value="Normal weight">Normal weight</option>
+                        <option value="Overweight">Overweight</option>
+                        <option value="Underweight">Underweight</option>
+                        <option value="Obese">Obese</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label><b>Friends</b></label>
+                    <input type="number" name="friends" required placeholder="Number of friends">
+                </div>
+
+                <div class="form-group">
+                    <label><b>Depression</b></label>
+                    <select name="depression" required>
+                        <option value="-1">Select any one option</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label><b>Social Fear</b></label>
+                    <select name="fear" required>
+                        <option value="-1">Select any one option</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label><b>Virgin</b></label>
+                    <select name="virgin" required>
+                        <option value="-1">Select any one option</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+
+                <input type="submit" value="Predict" class="btn-submit">
+            </form>
+        </article>
+    </div>
+
+    <!-- JavaScripts -->
+    <script src="static/layout1/scripts/jquery.min.js"></script>
+    <script src="static/layout1/scripts/jquery.backtotop.js"></script>
+    <script src="static/layout1/scripts/jquery.mobilemenu.js"></script>
+    <script>
+        // Particle Effect
+        const particleContainer = document.getElementById('particles');
+        for (let i = 0; i < 60; i++) {
+            const particle = document.createElement('div');
+            particle.style.position = 'absolute';
+            particle.style.width = `${Math.random() * 5}px`;
+            particle.style.height = particle.style.width;
+            particle.style.background = 'rgba(255, 255, 255, 0.7)';
+            particle.style.borderRadius = '50%';
+            particle.style.left = `${Math.random() * 100}vw`;
+            particle.style.top = `${Math.random() * 100}vh`;
+            particle.style.animation = `float ${Math.random() * 5 + 3}s infinite ease-in-out`;
+            particleContainer.appendChild(particle);
+        }
+
+        const styleSheet = document.createElement('style');
+        styleSheet.textContent = `
+            @keyframes float {
+                0%, 100% { transform: translateY(0); }
+                50% { transform: translateY(-25px); }
+            }
+        `;
+        document.head.appendChild(styleSheet);
+    </script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic Meta Tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <!-- Page Title -->
+    <title>Suicide Attempt Prediction</title>
+    <meta name="description" content="Predicting Suicide Attempts">
+    
+    <!-- External CSS Links -->
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/responsive.css">
+    <link rel="icon" href="static/images/fevicon.png" type="image/gif">
+    <link rel="stylesheet" href="static/css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="static/css/owl.theme.default.min.css">
+    
+    <!-- Inline Styles for Extra Customization -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        .header .logo-section {
+            text-align: left;
+        }
+
+        .header .logo-section img {
+            max-height: 60px;
+        }
+
+        .header .menu-area {
+            text-align: right;
+        }
+
+        .header .menu-area nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .header .menu-area nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        .header .menu-area nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .banner-main {
+    position: relative;
+    text-align: center;
+    color: white;
+    background: url('static/images/b2.jpg') no-repeat center center;
+    background-size: cover;  /* Makes the background image cover the entire screen */
+    background-attachment: fixed;  /* Makes the background image fixed when scrolling */
+    min-height: 100vh;  /* Ensures the banner takes up at least the full height of the viewport */
+    padding: 0;  /* Removes padding, so the image spans the entire height */
+}
+
+        .banner-main h1 {
+            font-size: 50px;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .banner-main .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .banner-main .admin-login-link {
+            display: block;
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        .banner-main .admin-login-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .banner-main h1 {
+                font-size: 40px;
+            }
+
+            .header .menu-area {
+                text-align: center;
+                margin-top: 15px;
+            }
+
+            .header .menu-area nav ul {
+                display: inline-block;
+            }
+
+            .header .menu-area nav ul li {
+                margin: 0 10px;
+            }
+        }
+    </style>
+</head>
+
+<body class="main-layout">
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <!-- Logo Section -->
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 logo-section">
+                    <div class="full">
+                        <a href="index.html">
+                            <!-- <img src="static/images/logo.png" alt="Logo" /> -->
+                        </a>
+                    </div>
+                </div>
+                <!-- Navigation Section -->
+                <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                    <div class="menu-area">
+                        <nav class="main-menu">
+                            <ul>
+                                <!-- Add menu items here if needed -->
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner Section -->
+    <section>
+        <div class="banner-main">
+            <div class="container">
+                <h1><b>Predicting</b><br><strong class="white"><b>Suicide Attempts</b></strong></h1>
+                <a href="admin" class="admin-login-link">Admin Login</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript Libraries -->
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/popper.min.js"></script>
+    <script src="static/js/bootstrap.bundle.min.js"></script>
+    <script src="static/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="static/js/custom.js"></script>
+    <script src="static/js/owl.carousel.js"></script>
+    <script>
+        $(document).ready(function() {
+            var owl = $('.owl-carousel');
+            owl.owlCarousel({
+                margin: 10,
+                nav: true,
+                loop: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 2
+                    },
+                    1000: {
+                        items: 3
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

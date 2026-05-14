@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic Meta Tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Admin Login - Suicide Attempts</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/responsive.css">
+    <link rel="icon" href="static/images/fevicon.png" type="image/gif">
+    <link rel="stylesheet" href="static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="static/css/owl.theme.default.min.css">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .banner-main {
+            position: relative;
+            text-align: center;
+            color: white;
+            background: url('static/images/b7.jpg') no-repeat center center;
+            background-size: cover;
+            min-height: 100vh;
+            padding: 0;
+        }
+
+        .banner-main h2, .banner-main h3 {
+            position: absolute;
+            color: white;
+            bottom: 40%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 36px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .banner-main h2 {
+            font-size: 48px;
+            font-weight: bold;
+        }
+
+        .form-container {
+            position: absolute;
+            bottom: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border-radius: 10px;
+            width: 400px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-container input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #fff;
+            font-size: 16px;
+        }
+
+        .form-container input[type="submit"] {
+            background: linear-gradient(to right, #28a745, #218838);
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .form-container input[type="submit"]:hover {
+            background: linear-gradient(to right, #218838, #28a745);
+        }
+
+        .form-container b {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .form-container i {
+            font-size: 14px;
+            color: #f1f1f1;
+        }
+
+        .form-container .msg {
+            color: #ffcc00;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .form-container input:focus {
+            outline: none;
+            box-shadow: 0 0 8px rgba(0, 121, 107, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .banner-main h2, .banner-main h3 {
+                font-size: 24px;
+                bottom: 30%;
+            }
+
+            .form-container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header">
+            <div class="header_white_section">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="header_information">
+                                <ul></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner Section -->
+    <section>
+        <div class="banner-main">
+            <!-- <h2>Welcome to the Suicide Prediction Portal</h2> -->
+            
+
+            <!-- Login Form -->
+            <div class="form-container" style="margin-top:90px">
+                <form action="/admin" method="post">
+                           <!-- <h3>{{ msg }}</h3> -->
+                           <div class="msg">{{ msg }}</div>
+                    <b>ADMIN : </b>
+                    <input type="text" name="admin" placeholder="Enter admin details" required><br>
+
+                    <b>PASSWORD: </b>
+                    <input type="password" name="pwd" placeholder="Admin password" required><br>
+
+                    <input type="submit" value="LOGIN">
+                    
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript Files -->
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/popper.min.js"></script>
+    <script src="static/js/bootstrap.bundle.min.js"></script>
+    <script src="static/js/jquery-3.0.0.min.js"></script>
+    <script src="static/js/plugin.js"></script>
+    <script src="static/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="static/js/custom.js"></script>
+    <script src="static/js/owl.carousel.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var owl = $('.owl-carousel');
+            owl.owlCarousel({
+                margin: 10,
+                nav: true,
+                loop: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 2
+                    },
+                    1000: {
+                        items: 3
+                    }
+                }
+            })
+        });
+    </script>
+
+</body>
+</html>
