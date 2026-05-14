@@ -46,6 +46,21 @@ suicidal-ideation-detection/
 
 
 
+
+
+
+
+
+## 🚀 Deployment
+
+This project is deployed using Render cloud platform.
+
+🔗 Live Application: https://suicidal-ideation-detection.onrender.com
+
+You can access the model interface and make predictions directly from the web app.
+
+
+
 👩‍💻 Author
 
 U. Pallavi
