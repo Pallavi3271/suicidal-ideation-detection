@@ -23,11 +23,17 @@ This project applies machine learning techniques to analyze mental health-relate
 
 
 
-## 🚀 Deployment
+
+🚀 Deployment
 
 This project is deployed using Render cloud platform.
 
-👉 Live Application: https://suicidal-ideation-detection.onrender.com
+🔗 Live Application: https://suicidal-ideation-detection.onrender.com
+
+You can access the model interface and make predictions directly from the web app.
+
+
+
 
 ## ⚙️ Installation
 Clone the repository:
@@ -58,18 +64,6 @@ suicidal-ideation-detection/
 
 
 
-
-
-
-
-
-🚀 Deployment
-
-This project is deployed using Render cloud platform.
-
-🔗 Live Application: https://suicidal-ideation-detection.onrender.com
-
-You can access the model interface and make predictions directly from the web app.
 
 
 👩‍💻 Author
