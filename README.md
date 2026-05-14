@@ -19,7 +19,15 @@ This project applies machine learning techniques to analyze mental health-relate
 - numpy  
 - seaborn  
 - matplotlib  
-- pygal  
+- pygal
+
+
+
+## 🚀 Deployment
+
+This project is deployed using Render cloud platform.
+
+👉 Live Application: https://suicidal-ideation-detection.onrender.com
 
 ## ⚙️ Installation
 Clone the repository:
@@ -28,6 +36,10 @@ Clone the repository:
 git clone https://github.com/Pallavi3271/suicidal-ideation-detection.git
 cd suicidal-ideation-detection
 pip install -r requirements.txt
+
+
+
+
 
 
 ## Usage
